@@ -1,0 +1,13 @@
+name: CI
+on: push
+jobs: CI
+  runs-on: ubuntu-latest
+  steps: 
+  - uses: action/checkout@v1
+  - uses: action/setup-node@v1
+  with:
+    node version: '14'
+  - run: npm ci
+  - run: npm run style:check
+  - run: npm test
+  
